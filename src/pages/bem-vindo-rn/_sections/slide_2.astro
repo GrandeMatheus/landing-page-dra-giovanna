@@ -1,0 +1,23 @@
+---
+import FullPageSlideComponent from "~/components/FullPageSlideComponent.astro";
+import icon_pattern_logo from "../../../assets/images/icon_pattern_logo.svg";
+import primary_wave_1 from "../../../assets/images/misc/primary_wave_1.svg";
+
+import Container from "~/components/Container.astro";
+
+const bgPatternIcon = `url(${icon_pattern_logo.src})`;
+---
+
+<style lang="scss" define:vars={{ bgPatternIcon }}></style>
+
+<FullPageSlideComponent bgColor="--primary-main">
+  <Container class="wrapper">
+    <img
+      src={primary_wave_1.src}
+      width={primary_wave_1.width}
+      height={primary_wave_1.height}
+      alt=""
+      class="mb-4 mx-auto md:ml-0"
+    />
+  </Container>
+</FullPageSlideComponent>

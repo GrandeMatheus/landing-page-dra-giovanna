@@ -1,0 +1,10 @@
+---
+const { bgColor } = Astro.props;
+---
+
+<style></style>
+<section
+  style={`background-color: var(${bgColor}); width: 100%; height: 100%; padding: 2rem`}
+>
+  <slot />
+</section>

@@ -1,0 +1,28 @@
+---
+import FullPageLayout from "../../layouts/FullPageLayout.astro";
+import Slide1 from "./_sections/slide_1.astro";
+import Slide2 from "./_sections/slide_2.astro";
+---
+
+<style>
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<FullPageLayout title="Boas vindas ao RN">
+  <swiper-slide><Slide1 /></swiper-slide>
+  <swiper-slide><Slide2 /></swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+  <swiper-slide>Slide 4</swiper-slide>
+  <swiper-slide>Slide 5</swiper-slide>
+  <swiper-slide>Slide 6</swiper-slide>
+  <swiper-slide>Slide 7</swiper-slide>
+  <swiper-slide>Slide 8</swiper-slide>
+  <swiper-slide>Slide 9</swiper-slide>
+</FullPageLayout>
