@@ -1,0 +1,117 @@
+---
+import FullPageSlideComponent from "~/components/FullPageSlideComponent.astro";
+import logo_horizontal from "../../../assets/images/logo_horizontal.svg";
+import arrow_down from "../../../assets/images/misc/arrow_down.svg";
+import icon_pattern_logo from "../../../assets/images/icon_pattern_logo.svg";
+import primary_wave_1 from "../../../assets/images/misc/primary_wave_1.svg";
+
+import Container from "~/components/Container.astro";
+
+const bgPatternIcon = `url(${icon_pattern_logo.src})`;
+---
+
+<style lang="scss" define:vars={{ bgPatternIcon }}>
+  h1 {
+    text-align: center;
+    font-size: 64px;
+    color: var(--primary-main);
+    z-index: 2;
+  }
+
+  .highlight {
+    display: block;
+    color: white;
+    font-size: 74px;
+  }
+
+  .box {
+    display: table;
+    margin: auto;
+
+    &:nth-child(1)::after,
+    &:nth-child(3)::after {
+      content: "";
+      display: block;
+      width: 650px;
+      height: 740px;
+      background-image: var(--bgPatternIcon);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      z-index: 0;
+    }
+
+    &:nth-child(1) {
+      &::after {
+        left: -20%;
+        top: -30%;
+        transform: scale(1.2);
+      }
+    }
+    &:nth-child(3) {
+      img {
+        animation: bounce2 2s ease infinite;
+      }
+
+      &::after {
+        right: -20%;
+        bottom: -15%;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  .img-bottom {
+  }
+
+  @keyframes bounce2 {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-15px);
+    }
+    70% {
+      transform: translateY(-10px);
+    }
+  }
+</style>
+
+<FullPageSlideComponent bgColor="--secondary-dark">
+  <Container class="wrapper">
+    <span class="box">
+      <img
+        src={logo_horizontal.src}
+        width={logo_horizontal.width}
+        height={logo_horizontal.height}
+        alt=""
+        class=""
+      />
+    </span>
+    <h1>
+      Boas vindas ao
+      <span class="highlight">Recém-nascido</span>
+    </h1>
+    <span class="boxspan">
+      <img
+        src={arrow_down.src}
+        width={arrow_down.width}
+        height={arrow_down.height}
+        alt=""
+        class=""
+      />
+    </span>
+  </Container>
+
+  <img
+    src={primary_wave_1.src}
+    width={primary_wave_1.width}
+    height={primary_wave_1.height}
+    alt=""
+    class="img-bottom"
+  />
+</FullPageSlideComponent>

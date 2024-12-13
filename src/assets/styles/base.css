@@ -1,0 +1,20 @@
+:root {
+  --primary-main: #e5a9a9;
+  --secondary-main: #a6d1b9;
+  --secondary-dark: #83a79d;
+}
+
+body {
+  font-family: "Outfit Variable", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Syncopate", sans-serif;
+}
