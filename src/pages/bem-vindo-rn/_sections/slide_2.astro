@@ -32,9 +32,11 @@ import { GetStaticPathsInvalidRouteParam } from "node_modules/astro/dist/core/er
   }
 
   p {
+    position: relative;
     text-align: left;
     color: white;
     font-size: 25px;
+    margin: 40px;
 
     &.first_p {
       position: relative;
@@ -50,20 +52,42 @@ import { GetStaticPathsInvalidRouteParam } from "node_modules/astro/dist/core/er
         right: 173px;
       }
     }
-    .third_image {
-      position: absolute;
-      top: 365px;
-      right: 285px;
-    }
+
     .line {
       position: absolute;
-      top: 338px;
-      left: 247px;
+      top: 30px;
+      left: -20px;
     }
     .underline {
       position: absolute;
-      top: 345px;
-      left: 245px;
+      top: 36px;
+      left: -20px;
+    }
+  }
+
+  .list_itens {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+
+    .item {
+      display: block;
+      margin-top: 30px;
+      background-color: var(--secondary-dark);
+      color: white;
+      font-size: 25px;
+      text-align: justify;
+      padding: 15px 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      box-shadow: -5px -5px 0px 0px rgb(255, 255, 255);
+    }
+    .third_image {
+      position: absolute;
+      top: 65px;
+      right: 0px;
     }
   }
 </style>
@@ -118,18 +142,18 @@ import { GetStaticPathsInvalidRouteParam } from "node_modules/astro/dist/core/er
       />
     </p>
     <div class="list_itens">
-      <p>Será que o leite materno é suficiente?</p>
-      <p>
-        Como garantir que o bebê está crescendo bem?
-        <img
-          src={stars.src}
-          width={stars.width}
-          height={stars.height}
-          alt=""
-          class="third_image"
-        />
-      </p>
-      <p>Banho de sol, vacinas, passeios... o que é prioridade?</p>
+      <div class="item">Será que o leite materno é suficiente?</div>
+      <div class="item">Como garantir que o bebê está crescendo bem?</div>
+      <div class="item">
+        Banho de sol, vacinas, passeios... o que é prioridade?
+      </div>
+      <img
+        src={stars.src}
+        width={stars.width}
+        height={stars.height}
+        alt=""
+        class="third_image"
+      />
     </div>
     <p>
       Essas dúvidas são comuns e completamente normais. E é exatamente por isso
