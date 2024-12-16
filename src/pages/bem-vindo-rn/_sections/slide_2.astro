@@ -1,23 +1,140 @@
 ---
 import FullPageSlideComponent from "~/components/FullPageSlideComponent.astro";
-import icon_pattern_logo from "../../../assets/images/icon_pattern_logo.svg";
-import primary_wave_1 from "../../../assets/images/misc/primary_wave_1.svg";
+import sparkles from "../../../assets/images/misc/slide2/sparkle.svg";
+import shiny from "../../../assets/images/misc/slide2/shiny.svg";
+import heart from "../../../assets/images/misc/slide2/heart.svg";
+import stars from "../../../assets/images/misc/slide2/stars.svg";
+import underline from "../../../assets/images/misc/slide2/underline.svg";
+import line from "../../../assets/images/misc/slide2/line.svg";
 
 import Container from "~/components/Container.astro";
-
-const bgPatternIcon = `url(${icon_pattern_logo.src})`;
+import { GetStaticPathsInvalidRouteParam } from "node_modules/astro/dist/core/errors/errors-data";
 ---
 
-<style lang="scss" define:vars={{ bgPatternIcon }}></style>
+<style lang="scss">
+  h1 {
+    text-align: justify;
+    font-size: 54px;
+    color: var(--secondary-dark);
+    z-index: 2;
+  }
+
+  .image {
+    position: absolute;
+    right: 100px;
+    margin-top: -175px;
+  }
+
+  .highlight {
+    display: block;
+    color: white;
+    font-size: 74px;
+  }
+
+  p {
+    text-align: left;
+    color: white;
+    font-size: 25px;
+
+    &.first_p {
+      position: relative;
+
+      .first_image {
+        position: absolute;
+        top: -90px;
+        left: -133px;
+      }
+      .second_image {
+        position: absolute;
+        top: 50px;
+        right: 173px;
+      }
+    }
+    .third_image {
+      position: absolute;
+      top: 365px;
+      right: 285px;
+    }
+    .line {
+      position: absolute;
+      top: 338px;
+      left: 247px;
+    }
+    .underline {
+      position: absolute;
+      top: 345px;
+      left: 245px;
+    }
+  }
+</style>
 
 <FullPageSlideComponent bgColor="--primary-main">
-  <Container class="wrapper">
-    <img
-      src={primary_wave_1.src}
-      width={primary_wave_1.width}
-      height={primary_wave_1.height}
-      alt=""
-      class="mb-4 mx-auto md:ml-0"
-    />
+  <Container>
+    <h1>
+      Parabéns
+      <span class="highlight">PAPAIS!!</span>
+      <img
+        src={shiny.src}
+        width={shiny.width}
+        height={shiny.height}
+        alt=""
+        class="image"
+      />
+    </h1>
+    <p class="first_p">
+      <img
+        src={sparkles.src}
+        width={sparkles.width}
+        height={sparkles.height}
+        alt=""
+        class="first_image"
+      />
+      Vocês viveram nove meses de expectativa, sonhos e preparação. Agora, o momento
+      mais especial chegou: o seu bebê está em casa, nos seus braços, trazendo amor
+      e descobertas.
+      <img
+        src={heart.src}
+        width={heart.width}
+        height={heart.height}
+        alt=""
+        class="second_image"
+      />
+    </p>
+    <p>
+      E agora?
+      <img
+        src={line.src}
+        width={line.width}
+        height={line.height}
+        alt=""
+        class="line"
+      />
+      <img
+        src={underline.src}
+        width={underline.width}
+        height={underline.height}
+        alt=""
+        class="underline"
+      />
+    </p>
+    <div class="list_itens">
+      <p>Será que o leite materno é suficiente?</p>
+      <p>
+        Como garantir que o bebê está crescendo bem?
+        <img
+          src={stars.src}
+          width={stars.width}
+          height={stars.height}
+          alt=""
+          class="third_image"
+        />
+      </p>
+      <p>Banho de sol, vacinas, passeios... o que é prioridade?</p>
+    </div>
+    <p>
+      Essas dúvidas são comuns e completamente normais. E é exatamente por isso
+      que estou aqui: para te orientar, responder suas perguntas e tornar esse
+      momento ainda mais especial e tranquilo!
+    </p>
   </Container>
 </FullPageSlideComponent>
